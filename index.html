@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Einladung zu meinem Geburtstag</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Du bist eingeladen!</h1>
+      <p>Trag dich bitte hier ein, damit ich planen kann.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>RSVP</h2>
+      <form id="rsvp-form">
+        <div class="field-row">
+          <label for="firstname">Vorname</label>
+          <input type="text" id="firstname" name="Vorname" required>
+        </div>
+
+        <div class="field-row">
+          <label for="lastname">Nachname</label>
+          <input type="text" id="lastname" name="Nachname" required>
+        </div>
+
+        <fieldset class="field-row">
+          <legend>Kommt</legend>
+          <label><input type="radio" name="Kommt" value="Ja" checked> Ja</label>
+          <label><input type="radio" name="Kommt" value="Nein"> Nein</label>
+        </fieldset>
+
+        <div class="field-row">
+          <label for="guests">Anzahl Gäste</label>
+          <input type="number" id="guests" name="Anzahl Gäste" min="0" value="0">
+        </div>
+
+        <div class="field-row">
+          <label for="message">Nachricht / Wünsche</label>
+          <textarea id="message" name="Nachricht" rows="4"></textarea>
+        </div>
+
+        <!-- Formular-Endpoint: in js/app.js als FORM_ENDPOINT setzen -->
+        <div class="actions">
+          <button type="submit">Absenden</button>
+        </div>
+
+        <div id="form-status" class="hidden"></div>
+      </form>
+    </section>
+
+    <section class="info card">
+      <h3>Hinweis</h3>
+      <p>Dieses Formular sendet Einträge an einen externen Formular-Endpoint (z. B. Formspree oder Google Forms). Trage in <code>js/app.js</code> deine Endpoint-URL ein (Konstante <code>FORM_ENDPOINT</code>).</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Danke und bis bald!</p>
+  </footer>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
